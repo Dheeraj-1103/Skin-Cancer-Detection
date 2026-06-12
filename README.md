@@ -249,9 +249,9 @@ Dheeraj Kattinti
 
 Machine Learning | Deep Learning | AI Engineering
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/Dheeraj-1103
 
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: https://www.linkedin.com/in/kattinti-dheeraj-a60035185/
 
 ---
 
