@@ -113,7 +113,7 @@ Input Image → Conv2D → MaxPool → Conv2D → MaxPool → Flatten → Dense 
 
 Clone the repository:
 
-bash git clone https://github.com/yourusername/Skin-Cancer-Detection.git  cd Skin-Cancer-Detection 
+bash git clone https://github.com/Dheeraj-1103/Skin-Cancer-Detection.git  cd Skin-Cancer-Detection 
 
 Install dependencies:
 
