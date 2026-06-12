@@ -1,0 +1,262 @@
+# 🩺 Skin Cancer Detection using Deep Learning (CNN)
+
+## 📌 Overview
+
+This project implements a Convolutional Neural Network (CNN) for automated skin cancer classification using dermatoscopic images from the HAM10000 dataset. The model learns to classify skin lesions into multiple diagnostic categories and assists in the early detection of skin cancer through image-based analysis.
+
+The system performs data preprocessing, class balancing, model training, evaluation, and prediction on unseen skin lesion images.
+
+---
+
+## 🎯 Objectives
+
+- Build a deep learning model for skin lesion classification.
+- Handle class imbalance using oversampling techniques.
+- Train a CNN capable of identifying multiple skin cancer categories.
+- Evaluate performance using accuracy, loss curves, and confusion matrices.
+- Predict skin lesion categories from new images.
+
+---
+
+## 📂 Dataset
+
+### HAM10000 Dataset
+HAM10000 (Human Against Machine with 10,000 Training Images) is a large collection of dermatoscopic images representing common pigmented skin lesions.
+
+- Total Images: 10,015
+- Image Size: 28 × 28 RGB
+- Number of Classes: 7
+
+Dataset Source:
+
+https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
+
+---
+
+## 🏷 Disease Categories
+
+| Label | Disease Type | Description |
+|---------|--------------|-------------|
+| 0 | Actinic Keratoses (akiec) | Precancerous skin lesion |
+| 1 | Basal Cell Carcinoma (bcc) | Common skin cancer |
+| 2 | Benign Keratosis-like Lesions (bkl) | Non-cancerous skin growth |
+| 3 | Dermatofibroma (df) | Benign skin nodule |
+| 4 | Melanoma (mel) | Most dangerous skin cancer |
+| 5 | Melanocytic Nevi (nv) | Common mole |
+| 6 | Vascular Lesions (vasc) | Blood vessel abnormalities |
+
+---
+
+## 🏗 Project Workflow
+
+### Step 1: Data Loading
+- Import HAM10000 dataset.
+- Load image pixel values and labels.
+
+### Step 2: Data Preprocessing
+- Separate features and target labels.
+- Normalize image pixel values.
+- Reshape images into CNN-compatible format.
+
+### Step 3: Train-Test Split
+- Training Data: 80%
+- Testing Data: 20%
+
+### Step 4: Handling Class Imbalance
+The dataset contains uneven class distributions.
+
+To overcome this:
+
+- Random Oversampling is applied using:
+  - imblearn.RandomOverSampler
+
+Benefits:
+- Balanced training dataset.
+- Reduced model bias toward majority classes.
+
+### Step 5: CNN Architecture
+
+The model consists of:
+
+- Convolution Layers
+- ReLU Activation
+- Max Pooling Layers
+- Dropout Regularization
+- Fully Connected Dense Layers
+- Softmax Output Layer
+
+Architecture Flow:
+
+Input Image → Conv2D → MaxPool → Conv2D → MaxPool → Flatten → Dense → Dropout → Dense → Softmax
+
+---
+
+## 🛠 Technologies Used
+
+### Programming Language
+- Python
+
+### Libraries
+- TensorFlow
+- Keras
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Scikit-Learn
+- Imbalanced-Learn
+- PIL (Pillow)
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+bash git clone https://github.com/yourusername/Skin-Cancer-Detection.git  cd Skin-Cancer-Detection 
+
+Install dependencies:
+
+bash pip install -r requirements.txt 
+
+---
+
+## 🚀 Running the Project
+
+Launch Jupyter Notebook:
+
+bash jupyter notebook 
+
+Open:
+
+bash Skin_Cancer_Detection.ipynb 
+
+Run all cells sequentially.
+
+---
+
+## 🧠 Model Training
+
+The model uses:
+
+python Adam Optimizer 
+
+Loss Function:
+
+python Sparse Categorical Crossentropy 
+
+Metrics:
+
+python Accuracy 
+
+Model Checkpointing:
+
+python best_model.h5 
+
+is automatically saved based on validation performance.
+
+---
+
+## 📊 Evaluation Metrics
+
+The project evaluates model performance using:
+
+### Accuracy
+
+Measures the percentage of correctly classified images.
+
+### Loss Curves
+
+- Training Loss
+- Validation Loss
+
+### Accuracy Curves
+
+- Training Accuracy
+- Validation Accuracy
+
+### Confusion Matrix
+
+Provides detailed class-wise prediction analysis.
+
+---
+
+## 📈 Visualizations
+
+The notebook generates:
+
+- Dataset Distribution Plot
+- Balanced Dataset Distribution
+- Sample Skin Lesion Images
+- Accuracy vs Epoch Graph
+- Loss vs Epoch Graph
+- Confusion Matrix Heatmap
+
+---
+
+## 🔍 Prediction on New Images
+
+The trained model can classify unseen skin lesion images.
+
+Example Workflow:
+
+1. Load image.
+2. Resize to 28×28.
+3. Normalize pixel values.
+4. Pass image to trained CNN.
+5. Obtain predicted class.
+
+Example:
+
+python prediction = model.predict(image) 
+
+---
+
+## 📁 Project Structure
+
+text Skin-Cancer-Detection/ │ ├── Skin_Cancer_Detection.ipynb ├── best_model.h5 ├── test.jpg ├── README.md ├── requirements.txt │ └── dataset/     └── hmnist_28_28_RGB.csv 
+
+---
+
+## 💡 Future Improvements
+
+- Use higher-resolution images (224×224).
+- Apply Transfer Learning:
+  - EfficientNet
+  - ResNet50
+  - DenseNet121
+  - Vision Transformers (ViT)
+- Deploy using Flask/FastAPI.
+- Create a web-based diagnostic dashboard.
+- Add Grad-CAM visual explanations.
+- Convert model to TensorFlow Lite for mobile deployment.
+
+---
+
+## ⚠ Disclaimer
+
+This project is intended for educational and research purposes only.
+
+The predictions generated by the model should not be considered a substitute for professional medical diagnosis, treatment, or clinical decision-making.
+
+Always consult qualified healthcare professionals for medical advice.
+
+---
+
+## 👨‍💻 Author
+
+Dheeraj Kattinti
+
+Machine Learning | Deep Learning | AI Engineering
+
+GitHub: https://github.com/yourusername
+
+LinkedIn: https://linkedin.com/in/yourprofile
+
+---
+
+## 📜 License
+
+This project is released under the MIT License.
+
+Feel free to use, modify, and distribute it for educational and research purposes
